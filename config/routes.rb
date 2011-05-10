@@ -1,9 +1,30 @@
 Lapsa::Application.routes.draw do
+
+  devise_for :users
+
+  get "pages/index"
+
+  get "pages/about"
+
+  get "pages/contact"
+  
+  get "calendar/index"
+
+  resources :companies  do as_routes end
+  resources :users 		do as_routes end
+  resources :events 	do as_routes end
+  resources :roles 		do as_routes end
+  
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  
+
+
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  resources :events
 
-  get "calendar/index"
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -50,7 +71,7 @@ Lapsa::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "calendar#index"
+  root :to => "pages#index"
 
   # See how all your routes lay out with "rake routes"
 

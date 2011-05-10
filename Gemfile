@@ -7,6 +7,13 @@ gem 'rails', '3.0.7'
 
 gem 'sqlite3'
 
+# Use devise as the authentication
+gem 'devise'
+# Use cancan for the authorization
+gem 'cancan'
+# Use active_scaffold for data showing
+gem 'active_scaffold_vho'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

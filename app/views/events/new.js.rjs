@@ -1,0 +1,8 @@
+  // We could also render a partial to display the comment here
+  $('#new-event').append("<%= escape_javascript(
+      simple_format( @event.description )
+    ) %>");
+
+
+
+
