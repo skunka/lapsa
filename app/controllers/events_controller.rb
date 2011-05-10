@@ -8,8 +8,8 @@ class EventsController < ApplicationController
     # this to be starts_at and ends_at to match rails conventions.
     # I'll eventually do that to make the demo a little cleaner.
     @events = Event.scoped  
-    @events = @events.after(params['start']) if (params['start'])
-    @events = @events.before(params['end']) if (params['end'])
+    @events = @events.after_time(params['start']) if (params['start'])
+    @events = @events.before_time(params['end']) if (params['end'])
     
     respond_to do |format|
       format.html # index.html.erb
